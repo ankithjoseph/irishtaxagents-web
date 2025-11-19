@@ -4,7 +4,7 @@ export function Footer() {
   return (
     <footer className="bg-white border-t border-neutral-200 text-neutral-600 py-4 text-sm">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-start justify-start gap-4 md:gap-6">
+        <div className="flex flex-col justify-center md:flex-row md:items-center justify-start gap-4 md:gap-6">
           
           {/* Brand, Address & Contact */}
           <div className="text-center md:text-left">
@@ -45,15 +45,15 @@ export function Footer() {
              <span className="text-[10px] mt-2 uppercase tracking-widest text-neutral-400">Scan vCard</span>
           </div>
 
-        </div>
+          {/* Copyright & Privacy */}
+          <div className="md:ml-auto flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-4 text-xs text-neutral-500">
+            <p>&copy; {new Date().getFullYear()} Irish Tax Agents. All rights reserved.</p>
+            <span className="hidden md:inline text-neutral-300">•</span>
+            <Link to="/privacy-policy" className="hover:text-neutral-900 transition-colors">
+              Privacy Policy
+            </Link>
+          </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-4 pt-2 border-t border-neutral-100 flex flex-col md:flex-row justify-start items-center gap-4 text-xs text-neutral-500">
-          <p>&copy; {new Date().getFullYear()} Irish Tax Agents. All rights reserved.</p>
-          <span className="hidden md:inline text-neutral-300">•</span>
-          <Link to="/privacy-policy" className="hover:text-neutral-900 transition-colors">
-            Privacy Policy
-          </Link>
         </div>
       </div>
     </footer>
