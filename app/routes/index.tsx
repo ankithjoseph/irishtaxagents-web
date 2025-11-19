@@ -1,0 +1,155 @@
+import { Link } from "react-router";
+
+export default function Index() {
+  return (
+    <div className="flex flex-col">
+      {/* Hero Section */}
+      <section
+        className="relative flex h-[400px] items-center justify-center  bg-center bg-cover bg-no-repeat"
+        style={{ backgroundImage: "url('/assets/hero-banner.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-sky-900/200" />
+        <div className="relative container mx-auto px-4 text-center">
+          <h1 className="font-serif text-4xl font-medium tracking-loose text-white sm:text-6xl drop-shadow-lg">
+            La gestoría Irlandesa que trabaja en Español
+          </h1>
+          <p className="mt-4 font-serif text-3xl font-normal text-white drop-shadow-md">
+            Desde 2016
+          </p>
+        </div>
+      </section>
+
+      {/* Services Blocks */}
+      <section className="bg-neutral-50 py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="font-serif  mb-12 text-center text-4xl font-bold text-sky-900">
+            Empresas o profesionales
+          </h2>
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <div className="rounded-xl bg-white p-6 shadow-sm">
+              <h3 className="font-serif mb-3 text-xl font-bold text-red-900">
+                Impuestos
+              </h3>
+              <p className="text-neutral-600">
+                Agentes tributarios registrados en Revenue con numero 77706B 
+              </p>
+            </div>
+            <div className="rounded-xl bg-white p-6 shadow-sm">
+              <h3 className="font-serif mb-3 text-xl font-bold text-red-900">
+                Registro
+              </h3>
+              <p className="text-neutral-600">
+                Gestión registral de documentos y declaraciones en toda Irlanda 
+              </p>
+            </div>
+            <div className="rounded-xl bg-white p-6 shadow-sm">
+              <h3 className="font-serif mb-3 text-xl font-bold text-red-900">
+                Contabilidad
+              </h3>
+              <p className="text-neutral-600">
+                La contabilidad en Irlanda y las cuentas financieras son para profesionales
+              </p>
+            </div>
+            <div className="rounded-xl bg-white p-6 shadow-sm">
+              <h3 className="font-serif mb-3 text-xl font-bold text-red-900 ">
+                Asesoría fiscal y tributaria
+              </h3>
+              <p className="text-neutral-600">
+                Conozca la legislación fiscal Irlandesa y sus obligaciones tributarias 
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* All Inclusive Service & Company Formation */}
+      <section className="py-20 ">
+        <div className="container mx-auto px-4">
+          {/* Main Heading */}
+          <div className="text-center mb-16">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-sky-900 mb-4">
+              Servicio todo incluido para empresas y profesionales
+            </h2>
+            <p className="font-serif text-2xl md:text-3xl font-bold text-sky-900 ">
+              desde 225 € mensuales
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* Card 1: Gestión contable */}
+            <div className="group relative h-[500px] overflow-hidden rounded-2xl shadow-xl">
+              <div
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                style={{
+                  backgroundImage: "url('/assets/contabilidad.jpg')",
+                }}
+              />
+              <div className="absolute inset-0 bg-sky-900/90 transition-opacity group-hover:bg-sky-900/80" />
+              <div className="relative flex h-full flex-col items-center justify-center p-8 text-center text-white">
+                <h3 className="font-serif text-3xl font-bold mb-4">
+                  Gestión contable y tributaria
+                </h3>
+                <p className="mb-8 text-lg text-sky-100 max-w-md min-h-[84px] flex items-center justify-center">
+                  Asesores fiscales en Irlanda. Gestionamos tu contabilidad,
+                  impuestos y nóminas para que tú solo te preocupes de tu
+                  negocio.
+                </p>
+                <Link
+                  to="/contacto"
+                  className="inline-block bg-white text-sky-900 px-8 py-3 rounded font-bold hover:bg-sky-50 transition-colors"
+                >
+                  Solicitar más información
+                </Link>
+              </div>
+            </div>
+
+            {/* Card 2: Constitución */}
+            <div className="group relative h-[500px] overflow-hidden rounded-2xl shadow-xl">
+              <div
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105 grayscale"
+                style={{
+                  backgroundImage: "url('/assets/constitucion.jpg')",
+                }}
+              />
+              <div className="absolute inset-0 bg-sky-900/90 transition-opacity group-hover:bg-sky-900/80" />
+              <div className="relative flex h-full flex-col items-center justify-center p-8 text-center text-white">
+                <h3 className="font-serif text-3xl font-bold mb-4">
+                  Constitución de empresas
+                </h3>
+                <p className="mb-8 text-lg text-sky-100 max-w-md min-h-[84px] flex items-center justify-center">
+                  Asesoramos y acompañamos a nuestros clientes durante el proceso
+                  de constitución legal de su empresa en Irlanda.
+                </p>
+                <Link
+                  to="/start-ups"
+                  className="inline-block bg-white text-sky-900 px-8 py-3 rounded font-bold hover:bg-sky-50 transition-colors"
+                >
+                  Solicitar más información
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonial */}
+      <section
+        className="relative py-32 bg-cover bg-center bg-no-repeat "
+        style={{
+          backgroundImage: "url('/assets/testimonial.jpg')",
+        }}
+      >
+        <div className="absolute inset-0 bg-sky-900/50" />
+        <div className="relative container mx-auto px-4 text-center text-white">
+          <blockquote className="font-serif text-2xl md:text-4xl italic leading-relaxed max-w-4xl mx-auto">
+            “Cuando todo está explicado en mi idioma, las decisiones son mucho
+            más fáciles.”
+          </blockquote>
+          <p className="mt-8 text-lg font-medium text-sky-100 italic">
+            - Cliente de Irish Tax Agents
+          </p>
+        </div>
+      </section>
+    </div>
+  );
+}
