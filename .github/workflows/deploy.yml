@@ -14,4 +14,4 @@ jobs:
         env:
           DEPLOY_HOOK: ${{ secrets.EASYPANEL_DEPLOY_HOOK }}
         run: |
-          # curl "$DEPLOY_HOOK"
+          curl "$DEPLOY_HOOK"
