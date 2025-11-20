@@ -1,0 +1,17 @@
+name: Deploy to Easypanel
+
+on:
+  push:
+    branches:
+      - main        # change if your default branch is different
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Easypanel deployment
+        env:
+          DEPLOY_HOOK: ${{ secrets.EASYPANEL_DEPLOY_HOOK }}
+        run: |
+          # curl "$DEPLOY_HOOK"
