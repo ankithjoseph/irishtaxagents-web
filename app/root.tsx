@@ -14,9 +14,6 @@ import "./app.css";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 
-// Update this with your actual domain
-const DOMAIN = "https://irishtaxagents-irishtaxagents-web.1uwppl.easypanel.host";
-
 export const links: Route.LinksFunction = () => {
   return [
     { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
@@ -128,16 +125,15 @@ export const meta: Route.MetaFunction = ({
   error,
   location: { pathname },
 }) => {
+  const origin = data?.origin ?? "https://irishtaxagents-irishtaxagents-web.1uwppl.easypanel.host";
   const title =
     isRouteErrorResponse(error) && error.status === 404
       ? "Page not found | Irish Tax Agents"
       : "Irish Tax Agents – Gestoría irlandesa en español";
   const description =
     "Gestoría irlandesa especializada en empresas y profesionales que trabajan en Irlanda, ofreciendo servicios de contabilidad, impuestos y asesoría fiscal en español.";
-
-  // Use the hardcoded DOMAIN for consistent social sharing and SEO
-  const currentUrl = `${DOMAIN}${pathname}`;
-  const ogImageUrl = `${DOMAIN}/og-logo.png`;
+  const currentUrl = origin + pathname;
+  const ogImageUrl = `${origin}/og-logo.png`;
 
   return [
     {
