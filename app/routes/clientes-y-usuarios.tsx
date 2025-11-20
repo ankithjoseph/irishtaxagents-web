@@ -4,10 +4,10 @@ import { getSession, commitSession } from "../sessions";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Clientes y Usuarios | Irish Tax Agents" },
+    { title: "Área de Clientes | Irish Tax Agents" },
     {
       name: "description",
-      content: "Información para clientes y usuarios de Irish Tax Agents.",
+      content: "Acceso exclusivo para clientes de Irish Tax Agents. Consulte sus documentos y expedientes de forma segura.",
     },
   ];
 };
@@ -31,7 +31,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
     }
 
     const pb = new PocketBase(pbUrl);
-    
+
     // Authenticate with the specific user for file retrieval
     await pb.collection("users").authWithPassword(pbEmail, pbPassword);
 
@@ -89,45 +89,45 @@ export default function ClientesYUsuarios() {
       {!isLoggedIn ? (
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-md mx-auto">
-          <h1 className="mb-8 text-4xl font-bold text-neutral-900 text-center">
-            Esta página está protegida por una contraseña.
-          </h1>
-          <p className="mb-6 text-lg text-neutral-700 text-center">
-            Por favor, introduzca el nombre de usuario y la contraseña a continuación.
-          </p>
-          <Form method="post" className="space-y-4">
-            <div>
-              <label htmlFor="username" className="block text-sm font-medium text-neutral-700">
-                Inicio de sesión:
-              </label>
-              <input
-                type="text"
-                id="username"
-                name="username"
-                className="mt-1 block w-full px-3 py-2 border border-neutral-300 rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500"
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor="password" className="block text-sm font-medium text-neutral-700">
-                Contraseña:
-              </label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                className="mt-1 block w-full px-3 py-2 border border-neutral-300 rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500"
-                required
-              />
-            </div>
-            {actionData?.error && <p className="text-red-600">{actionData.error}</p>}
-            <button
-              type="submit"
-              className="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-sky-600 hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500"
-            >
-              Login
-            </button>
-          </Form>
+            <h1 className="mb-8 text-4xl font-bold text-neutral-900 text-center">
+              Esta página está protegida por una contraseña.
+            </h1>
+            <p className="mb-6 text-lg text-neutral-700 text-center">
+              Por favor, introduzca el nombre de usuario y la contraseña a continuación.
+            </p>
+            <Form method="post" className="space-y-4">
+              <div>
+                <label htmlFor="username" className="block text-sm font-medium text-neutral-700">
+                  Inicio de sesión:
+                </label>
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  className="mt-1 block w-full px-3 py-2 border border-neutral-300 rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="password" className="block text-sm font-medium text-neutral-700">
+                  Contraseña:
+                </label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  className="mt-1 block w-full px-3 py-2 border border-neutral-300 rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500"
+                  required
+                />
+              </div>
+              {actionData?.error && <p className="text-red-600">{actionData.error}</p>}
+              <button
+                type="submit"
+                className="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-sky-600 hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500"
+              >
+                Login
+              </button>
+            </Form>
           </div>
         </div>
       ) : (
@@ -179,11 +179,10 @@ export default function ClientesYUsuarios() {
                     <Link
                       key={page}
                       to={`?page=${page}`}
-                      className={`px-3 py-2 rounded-md transition-colors ${
-                        page === currentPage
+                      className={`px-3 py-2 rounded-md transition-colors ${page === currentPage
                           ? 'bg-sky-600 text-white'
                           : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                      }`}
+                        }`}
                     >
                       {page}
                     </Link>

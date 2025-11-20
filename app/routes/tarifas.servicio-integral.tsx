@@ -2,11 +2,11 @@ import { type MetaFunction, Link } from "react-router";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Servicio de Suscripción Todo Incluido | Irish Tax Agents" },
+    { title: "Planes Todo Incluido Contabilidad Irlanda | Irish Tax Agents" },
     {
       name: "description",
       content:
-        "Suscripciones anuales con todos los servicios necesarios para tu actividad en Irlanda.",
+        "Suscripciones mensuales todo incluido para autónomos y empresas en Irlanda. Contabilidad, impuestos y nóminas desde 225€/mes.",
     },
   ];
 };

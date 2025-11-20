@@ -2,10 +2,10 @@ import { type MetaFunction } from "react-router";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Privacy Policy | Irish Tax Agents" },
+    { title: "Política de Privacidad | Irish Tax Agents" },
     {
       name: "description",
-      content: "Privacy Policy and Legal Notice for Irish Tax Agents.",
+      content: "Política de privacidad y aviso legal de Irish Tax Agents. Información sobre protección de datos y derechos de los usuarios.",
     },
   ];
 };

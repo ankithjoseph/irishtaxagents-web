@@ -54,7 +54,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
         <main className="flex-1">{children}</main>
 
-                <Footer />
+        <Footer />
 
         <ScrollRestoration />
         <Scripts />
@@ -83,7 +83,7 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   }
 
   return (
-      <main
+    <main
       className="container flex min-h-screen flex-col items-center
         justify-center gap-4 p-8"
     >
@@ -136,7 +136,7 @@ export const meta: Route.MetaFunction = ({
   const description =
     "Gestoría irlandesa especializada en empresas y profesionales que trabajan en Irlanda, ofreciendo servicios de contabilidad, impuestos y asesoría fiscal en español.";
   const currentUrl = origin + pathname;
-  const ogImageUrl = `${origin}/assets/screenshot.png`;
+  const ogImageUrl = `${origin}/og-logo.png`;
 
   return [
     {
@@ -155,8 +155,6 @@ export const meta: Route.MetaFunction = ({
     { property: "og:image", content: ogImageUrl },
     { property: "og:image:alt", content: title },
     { property: "og:image:type", content: "image/png" },
-    { property: "og:image:width", content: "2400" },
-    { property: "og:image:height", content: "1260" },
     { property: "og:url", content: currentUrl },
     {
       property: "og:type",
@@ -164,25 +162,21 @@ export const meta: Route.MetaFunction = ({
     },
     {
       property: "og:site_name",
-      content: "ReTail",
+      content: "Irish Tax Agents",
     },
     {
       property: "og:locale",
-      content: "en_US",
+      content: "es_ES",
+    },
+    {
+      name: "keywords",
+      content: "Gestoría Irlanda, Asesoría Fiscal Irlanda, Contabilidad Irlanda, Spanish Accountants Ireland, Impuestos Irlanda, Autónomos Irlanda, Empresas Irlanda",
     },
     // Only need these properties, since it automatically uses the og pproperties:
     // https://developer.x.com/en/docs/x-for-websites/cards/overview/markup
     {
       property: "twitter:card",
       content: "summary_large_image",
-    },
-    {
-      property: "twitter:site",
-      content: "@nikolailehbrink",
-    },
-    {
-      property: "twitter:creator",
-      content: "@nikolailehbrink",
     },
   ];
 };

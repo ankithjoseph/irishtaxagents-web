@@ -2,11 +2,11 @@ import { Link, type MetaFunction } from "react-router";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Servicios contables y fiscales en Irlanda" },
+    { title: "Servicios Contables y Fiscales en Irlanda | Irish Tax Agents" },
     {
       name: "description",
       content:
-        "Paquetes de servicios todo incluido para profesionales y empresas en Irlanda: contabilidad, nóminas, impuestos, registros y asesoría fiscal en español.",
+        "Servicios integrales para empresas y autónomos en Irlanda: contabilidad, nóminas, impuestos, registro de sociedades y asesoría fiscal en español.",
     },
   ];
 };

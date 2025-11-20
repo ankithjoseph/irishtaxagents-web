@@ -2,11 +2,11 @@ import { Link, type MetaFunction } from "react-router";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Servicios de cobro para profesionales | Irish Tax Agents" },
+    { title: "Servicios Umbrella Company Irlanda | Irish Tax Agents" },
     {
       name: "description",
       content:
-        "Servicios de cobro para profesionales independientes. Facturación, gestión de gastos y nómina en Irlanda.",
+        "Soluciones Umbrella para contratistas y profesionales en Irlanda. Facturación y nómina sin complicaciones administrativas.",
     },
   ];
 };

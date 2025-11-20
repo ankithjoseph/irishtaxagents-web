@@ -2,11 +2,11 @@ import { type MetaFunction } from "react-router";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Inicio de actividades profesionales en Irlanda" },
+    { title: "Emprender en Irlanda: Autónomos y Empresas | Irish Tax Agents" },
     {
       name: "description",
       content:
-        "Asesoramiento inicial para elegir la mejor estructura (autónomo, sociedad, esquema tipo umbrella) y entender obligaciones fiscales y contables antes de empezar a trabajar en Irlanda.",
+        "Asesoramiento para iniciar su actividad en Irlanda. Elija la mejor estructura: autónomo, Limited Company o Umbrella Company. Expertos en fiscalidad irlandesa.",
     },
   ];
 };

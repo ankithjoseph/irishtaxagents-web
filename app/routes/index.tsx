@@ -1,4 +1,15 @@
-import { Link } from "react-router";
+import { Link, type MetaFunction } from "react-router";
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: "Gestoría en Irlanda en Español | Irish Tax Agents" },
+    {
+      name: "description",
+      content:
+        "Gestoría irlandesa que trabaja en español. Servicios de contabilidad, impuestos, registro de empresas y asesoría fiscal en Irlanda desde 2016.",
+    },
+  ];
+};
 
 export default function Index() {
   return (
@@ -31,7 +42,7 @@ export default function Index() {
                 Impuestos
               </h3>
               <p className="text-neutral-600">
-                Agentes tributarios registrados en Revenue con numero 77706B 
+                Agentes tributarios registrados en Revenue con numero 77706B
               </p>
             </div>
             <div className="rounded-xl bg-white p-6 shadow-sm">
@@ -39,7 +50,7 @@ export default function Index() {
                 Registro
               </h3>
               <p className="text-neutral-600">
-                Gestión registral de documentos y declaraciones en toda Irlanda 
+                Gestión registral de documentos y declaraciones en toda Irlanda
               </p>
             </div>
             <div className="rounded-xl bg-white p-6 shadow-sm">
@@ -55,7 +66,7 @@ export default function Index() {
                 Asesoría fiscal y tributaria
               </h3>
               <p className="text-neutral-600">
-                Conozca la legislación fiscal Irlandesa y sus obligaciones tributarias 
+                Conozca la legislación fiscal Irlandesa y sus obligaciones tributarias
               </p>
             </div>
           </div>

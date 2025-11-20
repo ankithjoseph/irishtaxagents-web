@@ -2,11 +2,11 @@ import { type MetaFunction } from "react-router";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Contacto | Irish Tax Agents" },
+    { title: "Contacto Gestoría Irlanda | Irish Tax Agents" },
     {
       name: "description",
       content:
-        "Contacta con Irish Tax Agents. Gestoría irlandesa en español en Dublín.",
+        "Contacte con Irish Tax Agents en Dublín. Reserve su cita de asesoramiento personalizado para sus necesidades fiscales y contables en Irlanda.",
     },
   ];
 };
