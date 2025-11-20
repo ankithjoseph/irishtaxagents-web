@@ -1,13 +1,29 @@
 import { type MetaFunction } from "react-router";
 
-export const meta: MetaFunction = () => {
+export const meta: MetaFunction = ({ matches }) => {
+  const rootData = matches.find((match) => match.id === "root")?.data as
+    | { origin: string }
+    | undefined;
+  const origin = rootData?.origin;
+  const title = "Emprender en Irlanda: Autónomos y Empresas | Irish Tax Agents";
+  const description =
+    "Asesoramiento para iniciar su actividad en Irlanda. Elija la mejor estructura: autónomo, Limited Company o Umbrella Company. Expertos en fiscalidad irlandesa.";
+  const ogImageUrl = origin ? `${origin}/og-logo.png` : "/og-logo.png";
+
   return [
-    { title: "Emprender en Irlanda: Autónomos y Empresas | Irish Tax Agents" },
+    { title },
     {
       name: "description",
-      content:
-        "Asesoramiento para iniciar su actividad en Irlanda. Elija la mejor estructura: autónomo, Limited Company o Umbrella Company. Expertos en fiscalidad irlandesa.",
+      content: description,
     },
+    { property: "og:title", content: title },
+    { property: "og:description", content: description },
+    { property: "og:image", content: ogImageUrl },
+    { property: "og:type", content: "website" },
+    { property: "twitter:card", content: "summary_large_image" },
+    { property: "twitter:image", content: ogImageUrl },
+    { property: "twitter:title", content: title },
+    { property: "twitter:description", content: description },
   ];
 };
 

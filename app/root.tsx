@@ -125,7 +125,7 @@ export const meta: Route.MetaFunction = ({
   error,
   location: { pathname },
 }) => {
-  const origin = data?.origin ?? "https://irishtaxagents-irishtaxagents-web.1uwppl.easypanel.host";
+  const origin = data?.origin ?? "https://irishtaxagents.com";
   const title =
     isRouteErrorResponse(error) && error.status === 404
       ? "Page not found | Irish Tax Agents"

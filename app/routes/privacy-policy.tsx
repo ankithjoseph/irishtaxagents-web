@@ -1,12 +1,29 @@
 import { type MetaFunction } from "react-router";
 
-export const meta: MetaFunction = () => {
+export const meta: MetaFunction = ({ matches }) => {
+  const rootData = matches.find((match) => match.id === "root")?.data as
+    | { origin: string }
+    | undefined;
+  const origin = rootData?.origin;
+  const title = "Política de Privacidad | Irish Tax Agents";
+  const description =
+    "Política de privacidad y aviso legal de Irish Tax Agents. Información sobre protección de datos y derechos de los usuarios.";
+  const ogImageUrl = origin ? `${origin}/og-logo.png` : "/og-logo.png";
+
   return [
-    { title: "Política de Privacidad | Irish Tax Agents" },
+    { title },
     {
       name: "description",
-      content: "Política de privacidad y aviso legal de Irish Tax Agents. Información sobre protección de datos y derechos de los usuarios.",
+      content: description,
     },
+    { property: "og:title", content: title },
+    { property: "og:description", content: description },
+    { property: "og:image", content: ogImageUrl },
+    { property: "og:type", content: "website" },
+    { property: "twitter:card", content: "summary_large_image" },
+    { property: "twitter:image", content: ogImageUrl },
+    { property: "twitter:title", content: title },
+    { property: "twitter:description", content: description },
   ];
 };
 

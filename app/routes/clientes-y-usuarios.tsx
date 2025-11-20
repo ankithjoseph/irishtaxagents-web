@@ -2,13 +2,30 @@ import { type MetaFunction, Form, useLoaderData, useActionData, redirect, type L
 import PocketBase from "pocketbase";
 import { getSession, commitSession } from "../sessions";
 
-export const meta: MetaFunction = () => {
+export const meta: MetaFunction = ({ matches }) => {
+  const rootData = matches.find((match) => match.id === "root")?.data as
+    | { origin: string }
+    | undefined;
+  const origin = rootData?.origin;
+  const title = "Área de Clientes | Irish Tax Agents";
+  const description =
+    "Acceso exclusivo para clientes de Irish Tax Agents. Consulte sus documentos y expedientes de forma segura.";
+  const ogImageUrl = origin ? `${origin}/og-logo.png` : "/og-logo.png";
+
   return [
-    { title: "Área de Clientes | Irish Tax Agents" },
+    { title },
     {
       name: "description",
-      content: "Acceso exclusivo para clientes de Irish Tax Agents. Consulte sus documentos y expedientes de forma segura.",
+      content: description,
     },
+    { property: "og:title", content: title },
+    { property: "og:description", content: description },
+    { property: "og:image", content: ogImageUrl },
+    { property: "og:type", content: "website" },
+    { property: "twitter:card", content: "summary_large_image" },
+    { property: "twitter:image", content: ogImageUrl },
+    { property: "twitter:title", content: title },
+    { property: "twitter:description", content: description },
   ];
 };
 
@@ -180,8 +197,8 @@ export default function ClientesYUsuarios() {
                       key={page}
                       to={`?page=${page}`}
                       className={`px-3 py-2 rounded-md transition-colors ${page === currentPage
-                          ? 'bg-sky-600 text-white'
-                          : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                        ? 'bg-sky-600 text-white'
+                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                         }`}
                     >
                       {page}

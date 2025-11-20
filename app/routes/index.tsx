@@ -1,13 +1,29 @@
 import { Link, type MetaFunction } from "react-router";
 
-export const meta: MetaFunction = () => {
+export const meta: MetaFunction = ({ matches }) => {
+  const rootData = matches.find((match) => match.id === "root")?.data as
+    | { origin: string }
+    | undefined;
+  const origin = rootData?.origin;
+  const title = "Irish Tax Agents | Gestoría en Irlanda en Español ";
+  const description =
+    "Gestoría irlandesa que trabaja en español. Servicios de contabilidad, impuestos, registro de empresas y asesoría fiscal en Irlanda desde 2016.";
+  const ogImageUrl = origin ? `${origin}/og-logo.png` : "/og-logo.png";
+
   return [
-    { title: "Irish Tax Agents | Gestoría en Irlanda en Español " },
+    { title },
     {
       name: "description",
-      content:
-        "Gestoría irlandesa que trabaja en español. Servicios de contabilidad, impuestos, registro de empresas y asesoría fiscal en Irlanda desde 2016.",
+      content: description,
     },
+    { property: "og:title", content: title },
+    { property: "og:description", content: description },
+    { property: "og:image", content: ogImageUrl },
+    { property: "og:type", content: "website" },
+    { property: "twitter:card", content: "summary_large_image" },
+    { property: "twitter:image", content: ogImageUrl },
+    { property: "twitter:title", content: title },
+    { property: "twitter:description", content: description },
   ];
 };
 

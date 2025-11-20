@@ -1,13 +1,29 @@
 import { Link, type MetaFunction } from "react-router";
 
-export const meta: MetaFunction = () => {
+export const meta: MetaFunction = ({ matches }) => {
+  const rootData = matches.find((match) => match.id === "root")?.data as
+    | { origin: string }
+    | undefined;
+  const origin = rootData?.origin;
+  const title = "Servicios Umbrella Company Irlanda | Irish Tax Agents";
+  const description =
+    "Soluciones Umbrella para contratistas y profesionales en Irlanda. Facturación y nómina sin complicaciones administrativas.";
+  const ogImageUrl = origin ? `${origin}/og-logo.png` : "/og-logo.png";
+
   return [
-    { title: "Servicios Umbrella Company Irlanda | Irish Tax Agents" },
+    { title },
     {
       name: "description",
-      content:
-        "Soluciones Umbrella para contratistas y profesionales en Irlanda. Facturación y nómina sin complicaciones administrativas.",
+      content: description,
     },
+    { property: "og:title", content: title },
+    { property: "og:description", content: description },
+    { property: "og:image", content: ogImageUrl },
+    { property: "og:type", content: "website" },
+    { property: "twitter:card", content: "summary_large_image" },
+    { property: "twitter:image", content: ogImageUrl },
+    { property: "twitter:title", content: title },
+    { property: "twitter:description", content: description },
   ];
 };
 

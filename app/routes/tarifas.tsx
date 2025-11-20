@@ -1,13 +1,29 @@
 import { type MetaFunction, Link } from "react-router";
 
-export const meta: MetaFunction = () => {
+export const meta: MetaFunction = ({ matches }) => {
+  const rootData = matches.find((match) => match.id === "root")?.data as
+    | { origin: string }
+    | undefined;
+  const origin = rootData?.origin;
+  const title = "Tarifas Gestoría Irlanda | Irish Tax Agents";
+  const description =
+    "Consulte nuestras tarifas de servicios contables, fiscales y de constitución de empresas en Irlanda. Precios transparentes y competitivos.";
+  const ogImageUrl = origin ? `${origin}/og-logo.png` : "/og-logo.png";
+
   return [
-    { title: "Tarifas Gestoría Irlanda | Irish Tax Agents" },
+    { title },
     {
       name: "description",
-      content:
-        "Consulte nuestras tarifas de servicios contables, fiscales y de constitución de empresas en Irlanda. Precios transparentes y competitivos.",
+      content: description,
     },
+    { property: "og:title", content: title },
+    { property: "og:description", content: description },
+    { property: "og:image", content: ogImageUrl },
+    { property: "og:type", content: "website" },
+    { property: "twitter:card", content: "summary_large_image" },
+    { property: "twitter:image", content: ogImageUrl },
+    { property: "twitter:title", content: title },
+    { property: "twitter:description", content: description },
   ];
 };
 
