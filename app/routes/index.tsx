@@ -2,7 +2,7 @@ import { Link, type MetaFunction } from "react-router";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Gestoría en Irlanda en Español | Irish Tax Agents" },
+    { title: "Irish Tax Agents | Gestoría en Irlanda en Español " },
     {
       name: "description",
       content:

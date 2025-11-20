@@ -178,5 +178,17 @@ export const meta: Route.MetaFunction = ({
       property: "twitter:card",
       content: "summary_large_image",
     },
+    {
+      property: "twitter:image",
+      content: ogImageUrl,
+    },
+    {
+      property: "twitter:title",
+      content: title,
+    },
+    {
+      property: "twitter:description",
+      content: description,
+    },
   ];
 };
