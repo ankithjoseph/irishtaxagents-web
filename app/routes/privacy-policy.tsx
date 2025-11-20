@@ -13,129 +13,161 @@ export const meta: MetaFunction = () => {
 export default function PrivacyPolicy() {
   return (
     <div className="container mx-auto px-4 py-16">
-      <h1 className="mb-8 text-4xl font-bold text-neutral-900">
-        Privacy Policy
-      </h1>
-      <div className="prose prose-neutral max-w-3xl">
-        <section className="mb-8">
-          <h2 className="mb-4 text-2xl font-bold text-neutral-900">
-            1) Controller
-          </h2>
-          <p className="text-neutral-700">
-            Irish Tax Agents Ltd, located at Officepods Cranford Centre,
-            Stillorgan Rd, Dublin 4 (D04F1P2), Ireland, is responsible for
-            processing the personal data collected through this website and in
-            connection with our services. You can contact us at
-            info@irishtaxagents.com or by phone at 012303001.
-          </p>
-        </section>
+      <div className="max-w-3xl mx-auto">
+        <h1 className="mb-8 text-4xl font-bold text-neutral-900 border-b pb-4">
+          Privacy Policy
+        </h1>
 
-        <section className="mb-8">
-          <h2 className="mb-4 text-2xl font-bold text-neutral-900">
-            2) Data we collect
-          </h2>
-          <p className="text-neutral-700">
-            We process identification and contact details (such as name, email
-            and phone number), fiscal and financial information required for
-            invoicing, and any other information strictly necessary to provide
-            accounting, tax and administrative services, including GDPR-related
-            consulting.
-          </p>
-        </section>
+        <div className="space-y-6 text-neutral-700">
+          <section>
+            <p className="mb-4">
+              Irish Tax Agents Ltd, located at Officepods Cranford Centre,
+              Stillorgan Rd, Dublin 4 (D04F1P2), Ireland, is responsible for
+              processing the personal data collected on this website and in the
+              provision of our services. You may contact us at{" "}
+              <a
+                href="mailto:info@irishtaxagents.com"
+                className="text-blue-600 hover:underline"
+              >
+                info@irishtaxagents.com
+              </a>{" "}
+              or by phone at 012303001.
+            </p>
+          </section>
 
-        <section className="mb-8">
-          <h2 className="mb-4 text-2xl font-bold text-neutral-900">
-            3) Purposes and legal basis
-          </h2>
-          <ul className="list-inside list-disc space-y-2 text-neutral-700">
-            <li>
-              To manage enquiries and provide the services you request
-              (performance of a contract).
-            </li>
-            <li>
-              To comply with legal, tax and accounting obligations (legal
-              obligation).
-            </li>
-            <li>
-              To keep you informed about relevant updates relating to our
-              services (legitimate interest).
-            </li>
-          </ul>
-        </section>
+          <section>
+            <h2 className="text-xl font-semibold text-neutral-900 mb-2">
+              Data Collection
+            </h2>
+            <p>
+              We collect personal data such as contact details (name, email,
+              phone), fiscal and financial data for invoicing, and information
+              necessary to provide our consulting, training, and administrative
+              services related to GDPR compliance and taxation.
+            </p>
+          </section>
 
-        <section className="mb-8">
-          <h2 className="mb-4 text-2xl font-bold text-neutral-900">
-            4) Data retention
-          </h2>
-          <p className="text-neutral-700">
-            Personal data will be kept for as long as needed to fulfil the
-            purposes described above and to comply with applicable laws. Tax and
-            accounting records are kept for at least six years.
-          </p>
-        </section>
+          <section>
+            <h2 className="text-xl font-semibold text-neutral-900 mb-2">
+              Purpose and Legal Basis
+            </h2>
+            <p>
+              We process this data to manage inquiries and contracted services
+              (legal basis: contract performance), comply with legal obligations
+              (legal basis: legal obligation), and for legitimate interest in
+              providing relevant communications. Data will be retained for as
+              long as necessary to meet these purposes and legal requirements,
+              with a minimum of 6 years for tax and accounting records.
+            </p>
+          </section>
 
-        <section className="mb-8">
-          <h2 className="mb-4 text-2xl font-bold text-neutral-900">
-            5) Your rights
-          </h2>
-          <p className="text-neutral-700">
-            You may request access, rectification, deletion, restriction,
-            portability of your data and object to its processing by contacting
-            info@irishtaxagents.com. You also have the right to lodge a
-            complaint with the Data Protection Commission (DPC) in Ireland.
-          </p>
-        </section>
+          <section>
+            <h2 className="text-xl font-semibold text-neutral-900 mb-2">
+              Your Rights
+            </h2>
+            <p>
+              You have the right to access, rectify, delete, restrict, and port
+              your data, as well as to object to its processing. Requests can be
+              sent to{" "}
+              <a
+                href="mailto:info@irishtaxagents.com"
+                className="text-blue-600 hover:underline"
+              >
+                info@irishtaxagents.com
+              </a>
+              . If you believe your rights have been violated, you may file a
+              complaint with the Data Protection Commission (DPC) in Ireland (
+              <a
+                href="https://www.dataprotection.ie"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline"
+              >
+                https://www.dataprotection.ie
+              </a>
+              ).
+            </p>
+          </section>
 
-        <section className="mb-8">
-          <h2 className="mb-4 text-2xl font-bold text-neutral-900">
-            6) Security and processors
-          </h2>
-          <p className="text-neutral-700">
-            We apply technical and organisational measures such as encryption,
-            access control and incident management. Some services, like
-            Microsoft 365 and Sage, act as our processors and offer appropriate
-            data protection guarantees under GDPR.
-          </p>
-        </section>
+          <section>
+            <h2 className="text-xl font-semibold text-neutral-900 mb-2">
+              Security
+            </h2>
+            <p>
+              We apply appropriate technical and organizational measures to
+              safeguard personal data, including encryption, access controls,
+              and incident management protocols. Our processors (Microsoft 365,
+              Sage) comply with GDPR and provide adequate data protection
+              guarantees.
+            </p>
+          </section>
 
-        <section className="mb-8">
-          <h2 className="mb-4 text-2xl font-bold text-neutral-900">
-            7) Changes to this policy
-          </h2>
-          <p className="text-neutral-700">
-            We may update this Privacy Policy to reflect changes in law or in
-            our internal processes. The latest version will always be available
-            on this website.
-          </p>
-        </section>
+          <section>
+            <p className="italic text-sm">
+              This policy may be updated to reflect regulatory or internal
+              changes. The latest version will always be available on this
+              website.
+            </p>
+          </section>
 
-        <section className="mb-8">
-          <h2 className="mb-4 text-2xl font-bold text-neutral-900">
-            8) TCSP disclaimer
-          </h2>
-          <p className="text-neutral-700">
-            Irish Tax Agents Ltd is not registered as a Trust or Company Service
-            Provider (TCSP) and does not offer services such as direct company
-            formation, registered office or acting as Company Secretary to the
-            general public. Any reference to these activities refers only to
-            administrative assistance or coordination with third parties where
-            legally permitted.
-          </p>
-        </section>
+          <div className="bg-neutral-50 border-l-4 border-neutral-500 p-4 my-6">
+            <p className="font-semibold text-neutral-900 mb-1">
+              Important Note
+            </p>
+            <p className="text-sm">
+              Irish Tax Agents Ltd is not registered as a Trust or Company
+              Service Provider (TCSP) and does not offer services such as direct
+              company formation, registered office provision, or acting as a
+              Company Secretary to the public. Any reference to these services
+              refers only to administrative assistance, guidance, or third-party
+              coordination. These services are not billed or provided directly
+              by Irish Tax Agents Ltd unless explicitly stated and legally
+              permitted.
+            </p>
+          </div>
+        </div>
 
-        <section className="mb-8">
-          <h2 className="mb-4 text-2xl font-bold text-neutral-900">
-            9) Legal notice & terms of use
+        <div className="mt-12 pt-8 border-t border-neutral-200">
+          <h2 className="mb-6 text-3xl font-bold text-neutral-900">
+            Legal Notice and Terms of Use
           </h2>
-          <p className="text-neutral-700">
-            The content on this site is for information purposes only and does
-            not constitute legal or tax advice. Intellectual property rights
-            belong to Irish Tax Agents Ltd or its licensors; reproduction or
-            distribution without prior authorisation is prohibited. Irish Tax
-            Agents Ltd is not responsible for the improper use of the
-            information published on this website.
-          </p>
-        </section>
+          <div className="space-y-4 text-neutral-700">
+            <p>
+              This website (www.irishtaxagents.com) is owned by Irish Tax Agents
+              Ltd, located at Officepods Cranford Centre, Stillorgan Rd, Dublin
+              4 (D04F1P2), Ireland. Access and use of this site imply acceptance
+              of the following terms:
+            </p>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>
+                Content is provided for informational purposes only and does not
+                constitute legal or tax advice.
+              </li>
+              <li>
+                Intellectual property rights over the site’s content belong to
+                Irish Tax Agents Ltd or its licensors.
+              </li>
+              <li>
+                Reproduction or distribution of the content without express
+                authorization is prohibited.
+              </li>
+              <li>
+                Irish Tax Agents Ltd is not liable for misuse of the information
+                contained on this website.
+              </li>
+            </ul>
+            <p className="text-sm text-neutral-600 mt-4">
+              Irish Tax Agents Ltd does not act as a Trust or Company Service
+              Provider (TCSP) and does not provide regulated services such as
+              direct company formation, registered office services, or acting as
+              a Company Secretary in a fiduciary capacity. Any references to
+              these activities relate solely to third-party facilitation or
+              assistance for clients receiving ongoing accounting support, when
+              such service is clearly identified and compliant with the
+              applicable Irish legislation.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

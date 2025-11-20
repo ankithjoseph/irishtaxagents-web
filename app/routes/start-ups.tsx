@@ -33,7 +33,7 @@ export default function StartUps() {
       </section>
 
       {/* Content Sections */}
-      <section className="py-16 bg-neutral-50">
+      <section className="py-16 bg-neutral-50 lg:px-14">
         <div className="container mx-auto px-4">
           <div className="mb-12 space-y-8">
             <section className="rounded-xl border border-neutral-200 bg-neutral-50 p-8">

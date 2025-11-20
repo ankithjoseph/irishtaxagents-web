@@ -1,4 +1,4 @@
-import { type MetaFunction } from "react-router";
+import { Link, type MetaFunction } from "react-router";
 
 export const meta: MetaFunction = () => {
   return [
@@ -40,17 +40,32 @@ export default function Servicios() {
           </h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2 max-w-5xl mx-auto">
             {SERVICES.map((service, index) => (
-              <div
-                key={service.title}
-                className="flex items-center p-4 bg-white rounded-lg shadow-sm border border-neutral-100 hover:shadow-md transition-shadow"
-              >
-                <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-sky-100 text-sky-700 font-bold text-sm mr-4">
-                  {index + 1}
-                </span>
-                <span className="text-lg text-neutral-800 font-medium">
-                  {service.title}
-                </span>
-              </div>
+              service.link ? (
+                <Link
+                  key={service.title}
+                  to={service.link}
+                  className="flex items-center p-4 bg-white rounded-lg shadow-sm border border-neutral-100 hover:shadow-md transition-shadow"
+                >
+                  <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-sky-100 text-sky-700 font-bold text-sm mr-4">
+                    {index + 1}
+                  </span>
+                  <span className="text-lg text-neutral-800 font-medium">
+                    {service.title}
+                  </span>
+                </Link>
+              ) : (
+                <div
+                  key={service.title}
+                  className="flex items-center p-4 bg-white rounded-lg shadow-sm border border-neutral-100 hover:shadow-md transition-shadow"
+                >
+                  <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-sky-100 text-sky-700 font-bold text-sm mr-4">
+                    {index + 1}
+                  </span>
+                  <span className="text-lg text-neutral-800 font-medium">
+                    {service.title}
+                  </span>
+                </div>
+              )
             ))}
           </div>
         </div>
@@ -64,6 +79,7 @@ const SERVICES = [
     title: "Asesoría para emprendedores, profesionales y empresas",
     description:
       "Orientación en la elección de forma jurídica (autónomo, sociedad, esquema tipo umbrella) y análisis de costes fiscales y obligaciones según tu situación.",
+    link: "/start-ups",
   },
   {
     title: "Contabilidad",

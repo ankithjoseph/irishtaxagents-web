@@ -3,6 +3,7 @@ import { useState } from "react";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isTarifasOpen, setIsTarifasOpen] = useState(false);
 
   const links = [
     { to: "/", label: "Home" },
@@ -15,8 +16,9 @@ export function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-neutral-200 bg-white/95 backdrop-blur-sm supports-[backdrop-filter]:bg-white/60">
-      <div className="container mx-auto flex flex-col items-center px-4 py-4 md:py-6 gap-4">
+    <header className="sticky top-0 z-50 w-full">
+      <div className="absolute inset-0 border-b border-neutral-200 bg-white/95 backdrop-blur-sm supports-[backdrop-filter]:bg-white/60" />
+      <div className="relative z-50 container mx-auto flex flex-col items-center px-4 py-4 md:py-6 gap-4">
         <div className="flex w-full items-center justify-between md:justify-center">
           <Link to="/" className="flex items-center font-bold text-xl text-neutral-900">
             <img src="/assets/logo.png" alt="Irish Tax Agents Logo" className="h-18 md:h-32 w-auto" />
@@ -26,6 +28,8 @@ export function Header() {
           <button
             className="md:hidden p-2 text-neutral-600"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-expanded={isMenuOpen}
+            aria-label="Toggle navigation"
           >
             <span className="sr-only">Open menu</span>
             <svg
@@ -46,41 +50,123 @@ export function Header() {
           </button>
         </div>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {links.map((link) => (
-            <NavLink
-              key={link.to}
-              to={link.to}
-              className={({ isActive }) =>
-                `text-s transition-colors hover:text-blue-800 ${
-                  isActive ? "text-blue-800 font-bold" : "text-neutral-600 font-medium"
-                }`
-              }
-            >
-              {link.label}
-            </NavLink>
-          ))}
-        </nav>
-      </div>
+        {/* Desktop Nav with dropdown for tarifas */}
+        <nav className="hidden md:flex items-center gap-4 lg:gap-8">
+          {links.map((link) => {
+            if (link.to === "/tarifas") {
+              return (
+                <div
+                  key={link.to}
+                  className="relative group"
+                  onMouseEnter={() => setIsTarifasOpen(true)}
+                  onMouseLeave={() => setIsTarifasOpen(false)}
+                >
+                  <button
+                    className={`flex items-center gap-2 text-lg transition-colors hover:text-blue-800 text-neutral-600 font-medium whitespace-nowrap`}
+                    aria-haspopup="true"
+                    aria-expanded={isTarifasOpen}
+                    onClick={() => setIsTarifasOpen(!isTarifasOpen)}
+                  >
+                    {link.label}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      className={`h-4 w-4 text-neutral-500 transition-transform ${isTarifasOpen ? "rotate-180" : ""
+                        }`}
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.184l3.71-3.954a.75.75 0 111.08 1.04l-4.24 4.52a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </button>
 
-      {/* Mobile Nav */}
-      {isMenuOpen && (
-        <div className="md:hidden border-t border-neutral-200 bg-white">
-          <nav className="flex flex-col p-4 gap-4">
-            {links.map((link) => (
+                  <div
+                    className={`absolute left-0 top-full mt-1 w-64 rounded-lg border bg-white p-3 shadow-lg z-50 pointer-events-auto transition-all ${isTarifasOpen
+                      ? "visible opacity-100 translate-y-0"
+                      : "invisible opacity-0 translate-y-1"
+                      }`}
+                  >
+                    <Link
+                      to="/tarifas"
+                      onClick={() => setIsTarifasOpen(false)}
+                      className="mt-1 block rounded px-3 py-2 text-sm text-neutral-700 hover:bg-sky-50"
+                    >
+                      Ver tarifas completas
+                    </Link>
+                    <Link
+                      to="/tarifas/umbrella-services"
+                      onClick={() => setIsTarifasOpen(false)}
+                      className="block rounded px-3 py-2 text-sm text-neutral-700 hover:bg-sky-50"
+                    >
+                      Umbrella Services
+                    </Link>
+                    <Link
+                      to="/tarifas/servicio-integral"
+                      onClick={() => setIsTarifasOpen(false)}
+                      className="mt-1 block rounded px-3 py-2 text-sm text-neutral-700 hover:bg-sky-50"
+                    >
+                      Servicio integral de empresas
+                    </Link>
+                  </div>
+                </div>
+              );
+            }
+
+            return (
               <NavLink
                 key={link.to}
                 to={link.to}
-                onClick={() => setIsMenuOpen(false)}
                 className={({ isActive }) =>
-                  `text-sm transition-colors hover:text-blue-800 ${
-                    isActive ? "text-blue-800 font-bold" : "text-neutral-600 font-medium"
+                  `text-lg transition-colors hover:text-blue-800 whitespace-nowrap ${isActive ? "text-blue-800 font-bold" : "text-neutral-600 font-medium"
                   }`
                 }
               >
                 {link.label}
               </NavLink>
+            );
+          })}
+        </nav>
+      </div>
+
+      {/* Mobile Nav */}
+      {isMenuOpen && (
+        <div className="fixed inset-0 bg-white z-40 md:hidden pt-28 overflow-y-auto">
+          <nav className="flex flex-col items-center p-4 gap-6 text-center">
+            {links.map((link) => (
+              <div key={link.to} className="w-full">
+                <NavLink
+                  to={link.to}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={({ isActive }) =>
+                    `block text-xl py-2 transition-colors hover:text-blue-800 ${isActive ? "text-blue-800 font-bold" : "text-neutral-600 font-medium"
+                    }`
+                  }
+                >
+                  {link.label}
+                </NavLink>
+
+                {link.to === "/tarifas" && (
+                  <div className="mt-2 flex flex-col gap-3 bg-neutral-50 rounded-lg p-4 mx-4">
+                    <NavLink
+                      to="/tarifas/umbrella-services"
+                      onClick={() => setIsMenuOpen(false)}
+                      className="text-base text-neutral-600 hover:text-blue-800 block py-1"
+                    >
+                      Umbrella Services
+                    </NavLink>
+                    <NavLink
+                      to="/tarifas/servicio-integral"
+                      onClick={() => setIsMenuOpen(false)}
+                      className="text-base text-neutral-600 hover:text-blue-800 block py-1"
+                    >
+                      Servicio Integral
+                    </NavLink>
+                  </div>
+                )}
+              </div>
             ))}
           </nav>
         </div>

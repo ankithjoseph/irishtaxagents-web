@@ -10,7 +10,7 @@ export default function Index() {
       >
         <div className="absolute inset-0 bg-sky-900/200" />
         <div className="relative container mx-auto px-4 text-center">
-          <h1 className="font-serif text-4xl font-medium tracking-loose text-white sm:text-6xl drop-shadow-lg">
+          <h1 className="font-serif text-4xl font-medium tracking-loose text-white sm:text-5xl drop-shadow-lg">
             La gestoría Irlandesa que trabaja en Español
           </h1>
           <p className="mt-4 font-serif text-3xl font-normal text-white drop-shadow-md">
@@ -21,7 +21,7 @@ export default function Index() {
 
       {/* Services Blocks */}
       <section className="bg-neutral-50 py-20">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto lg:px-16">
           <h2 className="font-serif  mb-12 text-center text-4xl font-bold text-sky-900">
             Empresas o profesionales
           </h2>
