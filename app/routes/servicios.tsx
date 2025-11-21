@@ -31,58 +31,98 @@ export default function Servicios() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative bg-sky-900 py-20 text-white overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-          <div className="absolute right-0 top-0 -mr-20 -mt-20 h-[500px] w-[500px] rounded-full bg-white blur-3xl"></div>
-          <div className="absolute left-0 bottom-0 -ml-20 -mb-20 h-[300px] w-[300px] rounded-full bg-sky-400 blur-3xl"></div>
+      <section className="relative overflow-hidden bg-sky-900 py-20 text-white">
+        <div
+          className="pointer-events-none absolute top-0 left-0 h-full w-full
+            opacity-10"
+        >
+          <div
+            className="absolute top-0 right-0 -mt-20 -mr-20 h-[500px] w-[500px]
+              rounded-full bg-white blur-3xl"
+          ></div>
+          <div
+            className="absolute bottom-0 left-0 -mb-20 -ml-20 h-[300px]
+              w-[300px] rounded-full bg-sky-400 blur-3xl"
+          ></div>
         </div>
-        <div className="container relative mx-auto px-4 text-center">
-          <h1 className="mb-8 text-4xl md:text-5xl font-bold font-serif tracking-tight">
-            Paquetes todo incluido, <br className="hidden md:block" /> a su medida desde 225€/mensuales*
+        <div className="relative container mx-auto px-4 text-center">
+          <h1
+            className="mb-8 font-serif text-4xl font-bold tracking-tight
+              md:text-5xl"
+          >
+            Paquetes todo incluido, <br className="hidden md:block" /> a su
+            medida desde 225€/mensuales*
           </h1>
-          <div className="mx-auto max-w-3xl rounded-2xl bg-white/10 p-6 backdrop-blur-sm border border-white/10">
-            <p className="text-sky-50 text-sm md:text-base leading-relaxed">
-              * Irish Tax Agents conoce las obligaciones contables, fiscales y registrales de toda actividad y/o empresa. Es por esto que podemos hacer un calculo del trabajo que requieren nuestros clientes, y el coste que esto supone en un ejercicio fiscal. El coste de cada paquete es el resultante de la suma de todos los servicios requeridos en un ejercicio normal, menos nuestro descuento especial por pago lineal, mensual y domiciliado por banco.
+          <div
+            className="mx-auto max-w-3xl rounded-2xl border border-white/10
+              bg-white/10 p-6 backdrop-blur-sm"
+          >
+            <p className="text-sm leading-relaxed text-sky-50 md:text-base">
+              * Irish Tax Agents conoce las obligaciones contables, fiscales y
+              registrales de toda actividad y/o empresa. Es por esto que podemos
+              hacer un calculo del trabajo que requieren nuestros clientes, y el
+              coste que esto supone en un ejercicio fiscal. El coste de cada
+              paquete es el resultante de la suma de todos los servicios
+              requeridos en un ejercicio normal, menos nuestro descuento
+              especial por pago lineal, mensual y domiciliado por banco.
             </p>
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-16 bg-neutral-50">
+      <section className="bg-neutral-50 py-16">
         <div className="container mx-auto px-4">
-          <h2 className="mb-12 text-center text-3xl font-bold text-sky-900 font-serif">
+          <h2
+            className="mb-12 text-center font-serif text-3xl font-bold
+              text-sky-900"
+          >
             Servicios para profesionales y empresas
           </h2>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2 max-w-5xl mx-auto">
-            {SERVICES.map((service, index) => (
+          <div
+            className="mx-auto grid max-w-5xl gap-4 sm:grid-cols-2
+              lg:grid-cols-2"
+          >
+            {SERVICES.map((service, index) =>
               service.link ? (
                 <Link
                   key={service.title}
                   to={service.link}
-                  className="flex items-center p-4 bg-white rounded-lg shadow-sm border border-neutral-100 hover:shadow-md transition-shadow"
+                  className="flex items-center rounded-lg border
+                    border-neutral-100 bg-white p-4 shadow-sm transition-shadow
+                    hover:shadow-md"
                 >
-                  <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-sky-100 text-sky-700 font-bold text-sm mr-4">
+                  <span
+                    className="mr-4 flex h-8 w-8 flex-shrink-0 items-center
+                      justify-center rounded-full bg-sky-100 text-sm font-bold
+                      text-sky-700"
+                  >
                     {index + 1}
                   </span>
-                  <span className="text-lg text-neutral-800 font-medium">
+                  <span className="text-lg font-medium text-neutral-800">
                     {service.title}
                   </span>
                 </Link>
               ) : (
                 <div
                   key={service.title}
-                  className="flex items-center p-4 bg-white rounded-lg shadow-sm border border-neutral-100 hover:shadow-md transition-shadow"
+                  className="flex items-center rounded-lg border
+                    border-neutral-100 bg-white p-4 shadow-sm transition-shadow
+                    hover:shadow-md"
                 >
-                  <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-sky-100 text-sky-700 font-bold text-sm mr-4">
+                  <span
+                    className="mr-4 flex h-8 w-8 flex-shrink-0 items-center
+                      justify-center rounded-full bg-sky-100 text-sm font-bold
+                      text-sky-700"
+                  >
                     {index + 1}
                   </span>
-                  <span className="text-lg text-neutral-800 font-medium">
+                  <span className="text-lg font-medium text-neutral-800">
                     {service.title}
                   </span>
                 </div>
-              )
-            ))}
+              ),
+            )}
           </div>
         </div>
       </section>

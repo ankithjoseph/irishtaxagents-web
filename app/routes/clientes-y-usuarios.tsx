@@ -1,4 +1,13 @@
-import { type MetaFunction, Form, useLoaderData, useActionData, redirect, type LoaderFunctionArgs, type ActionFunctionArgs, Link } from "react-router";
+import {
+  type MetaFunction,
+  Form,
+  useLoaderData,
+  useActionData,
+  redirect,
+  type LoaderFunctionArgs,
+  type ActionFunctionArgs,
+  Link,
+} from "react-router";
 import PocketBase from "pocketbase";
 import { getSession, commitSession } from "../sessions";
 
@@ -44,7 +53,13 @@ export async function loader({ request }: LoaderFunctionArgs) {
 
     if (!pbUrl || !pbEmail || !pbPassword) {
       console.error("Missing PocketBase credentials");
-      return { isLoggedIn: true, files: [], error: "Configuration error", totalPages: 0, currentPage: 1 };
+      return {
+        isLoggedIn: true,
+        files: [],
+        error: "Configuration error",
+        totalPages: 0,
+        currentPage: 1,
+      };
     }
 
     const pb = new PocketBase(pbUrl);
@@ -68,10 +83,21 @@ export async function loader({ request }: LoaderFunctionArgs) {
       href: `${pb.baseURL}/api/files/${record.collectionId}/${record.id}/${record.field}`,
     }));
 
-    return { isLoggedIn: true, files, totalPages: records.totalPages, currentPage: page };
+    return {
+      isLoggedIn: true,
+      files,
+      totalPages: records.totalPages,
+      currentPage: page,
+    };
   } catch (error) {
     console.error("PocketBase error:", error);
-    return { isLoggedIn: true, files: [], error: "Failed to fetch files", totalPages: 0, currentPage: 1 };
+    return {
+      isLoggedIn: true,
+      files: [],
+      error: "Failed to fetch files",
+      totalPages: 0,
+      currentPage: 1,
+    };
   }
 }
 
@@ -82,8 +108,10 @@ export async function action({ request }: ActionFunctionArgs) {
   const password = formData.get("password");
 
   // Verify against environment variables
-  const validUsername = process.env.VITE_USERNAME || import.meta.env.VITE_USERNAME;
-  const validPassword = process.env.VITE_PASSWORD || import.meta.env.VITE_PASSWORD;
+  const validUsername =
+    process.env.VITE_USERNAME || import.meta.env.VITE_USERNAME;
+  const validPassword =
+    process.env.VITE_PASSWORD || import.meta.env.VITE_PASSWORD;
 
   if (username === validUsername && password === validPassword) {
     session.set("userId", "admin"); // Simple session marker
@@ -98,49 +126,66 @@ export async function action({ request }: ActionFunctionArgs) {
 }
 
 export default function ClientesYUsuarios() {
-  const { isLoggedIn, files, totalPages, currentPage } = useLoaderData<typeof loader>();
+  const { isLoggedIn, files, totalPages, currentPage } =
+    useLoaderData<typeof loader>();
   const actionData = useActionData<typeof action>();
 
   return (
     <div className="min-h-screen">
       {!isLoggedIn ? (
         <div className="container mx-auto px-4 py-16">
-          <div className="max-w-md mx-auto">
-            <h1 className="mb-8 text-4xl font-bold text-neutral-900 text-center">
+          <div className="mx-auto max-w-md">
+            <h1 className="mb-8 text-center text-4xl font-bold text-neutral-900">
               Esta página está protegida por una contraseña.
             </h1>
-            <p className="mb-6 text-lg text-neutral-700 text-center">
-              Por favor, introduzca el nombre de usuario y la contraseña a continuación.
+            <p className="mb-6 text-center text-lg text-neutral-700">
+              Por favor, introduzca el nombre de usuario y la contraseña a
+              continuación.
             </p>
             <Form method="post" className="space-y-4">
               <div>
-                <label htmlFor="username" className="block text-sm font-medium text-neutral-700">
+                <label
+                  htmlFor="username"
+                  className="block text-sm font-medium text-neutral-700"
+                >
                   Inicio de sesión:
                 </label>
                 <input
                   type="text"
                   id="username"
                   name="username"
-                  className="mt-1 block w-full px-3 py-2 border border-neutral-300 rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500"
+                  className="mt-1 block w-full rounded-md border
+                    border-neutral-300 px-3 py-2 shadow-sm focus:border-sky-500
+                    focus:ring-sky-500 focus:outline-none"
                   required
                 />
               </div>
               <div>
-                <label htmlFor="password" className="block text-sm font-medium text-neutral-700">
+                <label
+                  htmlFor="password"
+                  className="block text-sm font-medium text-neutral-700"
+                >
                   Contraseña:
                 </label>
                 <input
                   type="password"
                   id="password"
                   name="password"
-                  className="mt-1 block w-full px-3 py-2 border border-neutral-300 rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500"
+                  className="mt-1 block w-full rounded-md border
+                    border-neutral-300 px-3 py-2 shadow-sm focus:border-sky-500
+                    focus:ring-sky-500 focus:outline-none"
                   required
                 />
               </div>
-              {actionData?.error && <p className="text-red-600">{actionData.error}</p>}
+              {actionData?.error && (
+                <p className="text-red-600">{actionData.error}</p>
+              )}
               <button
                 type="submit"
-                className="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-sky-600 hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500"
+                className="inline-flex w-full justify-center rounded-md border
+                  border-transparent bg-sky-600 px-4 py-2 text-sm font-medium
+                  text-white shadow-sm hover:bg-sky-700 focus:ring-2
+                  focus:ring-sky-500 focus:ring-offset-2 focus:outline-none"
               >
                 Login
               </button>
@@ -149,12 +194,18 @@ export default function ClientesYUsuarios() {
         </div>
       ) : (
         <div>
-          <section className="py-16 bg-neutral-50 min-h-screen">
+          <section className="min-h-screen bg-neutral-50 py-16">
             <div className="container mx-auto px-4 pt-8">
-              <h1 className="mb-12 text-center text-3xl font-bold text-sky-900 font-serif">
+              <h1
+                className="mb-12 text-center font-serif text-3xl font-bold
+                  text-sky-900"
+              >
                 Download Files
               </h1>
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2 max-w-5xl mx-auto">
+              <div
+                className="mx-auto grid max-w-5xl gap-4 sm:grid-cols-2
+                  lg:grid-cols-2"
+              >
                 {files && files.length > 0 ? (
                   files.map((file: any, index: number) => (
                     <a
@@ -163,51 +214,64 @@ export default function ClientesYUsuarios() {
                       download
                       target="_blank"
                       rel="noreferrer"
-                      className="flex flex-col p-4 bg-white rounded-lg shadow-sm border border-neutral-100 hover:shadow-md transition-shadow"
+                      className="flex flex-col rounded-lg border
+                        border-neutral-100 bg-white p-4 shadow-sm
+                        transition-shadow hover:shadow-md"
                     >
-                      <div className="flex items-center mb-2">
-                        <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-sky-100 text-sky-700 font-bold text-sm mr-4">
+                      <div className="mb-2 flex items-center">
+                        <span
+                          className="mr-4 flex h-8 w-8 flex-shrink-0
+                            items-center justify-center rounded-full bg-sky-100
+                            text-sm font-bold text-sky-700"
+                        >
                           {index + 1}
                         </span>
-                        <span className="text-lg text-neutral-800 font-medium">
+                        <span className="text-lg font-medium text-neutral-800">
                           {file.title}
                         </span>
                       </div>
-                      <p className="text-sm text-neutral-600 ml-12">
+                      <p className="ml-12 text-sm text-neutral-600">
                         {file.description}
                       </p>
                     </a>
                   ))
                 ) : (
-                  <p className="text-center col-span-2 text-neutral-500">No files found.</p>
+                  <p className="col-span-2 text-center text-neutral-500">
+                    No files found.
+                  </p>
                 )}
               </div>
               {totalPages > 1 && (
-                <div className="flex justify-center items-center mt-8 space-x-1">
+                <div className="mt-8 flex items-center justify-center space-x-1">
                   {currentPage > 1 && (
                     <Link
                       to={`?page=${currentPage - 1}`}
-                      className="px-3 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition-colors"
+                      className="rounded-md bg-gray-200 px-3 py-2 text-gray-700
+                        transition-colors hover:bg-gray-300"
                     >
                       &laquo; Previous
                     </Link>
                   )}
-                  {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                    <Link
-                      key={page}
-                      to={`?page=${page}`}
-                      className={`px-3 py-2 rounded-md transition-colors ${page === currentPage
-                        ? 'bg-sky-600 text-white'
-                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                        }`}
-                    >
-                      {page}
-                    </Link>
-                  ))}
+                  {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                    (page) => (
+                      <Link
+                        key={page}
+                        to={`?page=${page}`}
+                        className={`rounded-md px-3 py-2 transition-colors ${
+                          page === currentPage
+                            ? "bg-sky-600 text-white"
+                            : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                          }`}
+                      >
+                        {page}
+                      </Link>
+                    ),
+                  )}
                   {currentPage < totalPages && (
                     <Link
                       to={`?page=${currentPage + 1}`}
-                      className="px-3 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition-colors"
+                      className="rounded-md bg-gray-200 px-3 py-2 text-gray-700
+                        transition-colors hover:bg-gray-300"
                     >
                       Next &raquo;
                     </Link>

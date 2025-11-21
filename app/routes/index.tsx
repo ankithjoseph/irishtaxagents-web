@@ -32,15 +32,22 @@ export default function Index() {
     <div className="flex flex-col">
       {/* Hero Section */}
       <section
-        className="relative flex h-[400px] items-center justify-center  bg-center bg-cover bg-no-repeat"
+        className="relative flex h-[400px] items-center justify-center bg-cover
+          bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/assets/hero-banner.jpg')" }}
       >
         <div className="absolute inset-0 bg-sky-900/200" />
         <div className="relative container mx-auto px-4 text-center">
-          <h1 className="font-serif text-4xl font-medium tracking-loose text-white sm:text-5xl drop-shadow-lg">
+          <h1
+            className="tracking-loose font-serif text-4xl font-medium text-white
+              drop-shadow-lg sm:text-5xl"
+          >
             La gestoría Irlandesa que trabaja en Español
           </h1>
-          <p className="mt-4 font-serif text-3xl font-normal text-white drop-shadow-md">
+          <p
+            className="mt-4 font-serif text-3xl font-normal text-white
+              drop-shadow-md"
+          >
             Desde 2016
           </p>
         </div>
@@ -49,12 +56,15 @@ export default function Index() {
       {/* Services Blocks */}
       <section className="bg-neutral-50 py-20">
         <div className="container mx-auto lg:px-16">
-          <h2 className="font-serif  mb-12 text-center text-4xl font-bold text-sky-900">
+          <h2
+            className="mb-12 text-center font-serif text-4xl font-bold
+              text-sky-900"
+          >
             Empresas o profesionales
           </h2>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             <div className="rounded-xl bg-white p-6 shadow-sm">
-              <h3 className="font-serif mb-3 text-xl font-bold text-red-900">
+              <h3 className="mb-3 font-serif text-xl font-bold text-red-900">
                 Impuestos
               </h3>
               <p className="text-neutral-600">
@@ -62,7 +72,7 @@ export default function Index() {
               </p>
             </div>
             <div className="rounded-xl bg-white p-6 shadow-sm">
-              <h3 className="font-serif mb-3 text-xl font-bold text-red-900">
+              <h3 className="mb-3 font-serif text-xl font-bold text-red-900">
                 Registro
               </h3>
               <p className="text-neutral-600">
@@ -70,19 +80,21 @@ export default function Index() {
               </p>
             </div>
             <div className="rounded-xl bg-white p-6 shadow-sm">
-              <h3 className="font-serif mb-3 text-xl font-bold text-red-900">
+              <h3 className="mb-3 font-serif text-xl font-bold text-red-900">
                 Contabilidad
               </h3>
               <p className="text-neutral-600">
-                La contabilidad en Irlanda y las cuentas financieras son para profesionales
+                La contabilidad en Irlanda y las cuentas financieras son para
+                profesionales
               </p>
             </div>
             <div className="rounded-xl bg-white p-6 shadow-sm">
-              <h3 className="font-serif mb-3 text-xl font-bold text-red-900 ">
+              <h3 className="mb-3 font-serif text-xl font-bold text-red-900">
                 Asesoría fiscal y tributaria
               </h3>
               <p className="text-neutral-600">
-                Conozca la legislación fiscal Irlandesa y sus obligaciones tributarias
+                Conozca la legislación fiscal Irlandesa y sus obligaciones
+                tributarias
               </p>
             </div>
           </div>
@@ -90,40 +102,59 @@ export default function Index() {
       </section>
 
       {/* All Inclusive Service & Company Formation */}
-      <section className="py-20 ">
+      <section className="py-20">
         <div className="container mx-auto px-4">
           {/* Main Heading */}
-          <div className="text-center mb-16">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-sky-900 mb-4">
+          <div className="mb-16 text-center">
+            <h2
+              className="mb-4 font-serif text-3xl font-bold text-sky-900
+                md:text-4xl"
+            >
               Servicio todo incluido para empresas y profesionales
             </h2>
-            <p className="font-serif text-2xl md:text-3xl font-bold text-sky-900 ">
+            <p
+              className="font-serif text-2xl font-bold text-sky-900 md:text-3xl"
+            >
               desde 225 € mensuales
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-2">
             {/* Card 1: Gestión contable */}
-            <div className="group relative h-[500px] overflow-hidden rounded-2xl shadow-xl">
+            <div
+              className="group relative h-[500px] overflow-hidden rounded-2xl
+                shadow-xl"
+            >
               <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                className="absolute inset-0 bg-cover bg-center
+                  transition-transform duration-500 group-hover:scale-105"
                 style={{
                   backgroundImage: "url('/assets/contabilidad.jpg')",
                 }}
               />
-              <div className="absolute inset-0 bg-sky-900/90 transition-opacity group-hover:bg-sky-900/80" />
-              <div className="relative flex h-full flex-col items-center justify-center p-8 text-center text-white">
-                <h3 className="font-serif text-3xl font-bold mb-4">
+              <div
+                className="absolute inset-0 bg-sky-900/90 transition-opacity
+                  group-hover:bg-sky-900/80"
+              />
+              <div
+                className="relative flex h-full flex-col items-center
+                  justify-center p-8 text-center text-white"
+              >
+                <h3 className="mb-4 font-serif text-3xl font-bold">
                   Gestión contable y tributaria
                 </h3>
-                <p className="mb-8 text-lg text-sky-100 max-w-md min-h-[84px] flex items-center justify-center">
+                <p
+                  className="mb-8 flex min-h-[84px] max-w-md items-center
+                    justify-center text-lg text-sky-100"
+                >
                   Asesores fiscales en Irlanda. Gestionamos tu contabilidad,
                   impuestos y nóminas para que tú solo te preocupes de tu
                   negocio.
                 </p>
                 <Link
                   to="/contacto"
-                  className="inline-block bg-white text-sky-900 px-8 py-3 rounded font-bold hover:bg-sky-50 transition-colors"
+                  className="inline-block rounded bg-white px-8 py-3 font-bold
+                    text-sky-900 transition-colors hover:bg-sky-50"
                 >
                   Solicitar más información
                 </Link>
@@ -131,25 +162,39 @@ export default function Index() {
             </div>
 
             {/* Card 2: Constitución */}
-            <div className="group relative h-[500px] overflow-hidden rounded-2xl shadow-xl">
+            <div
+              className="group relative h-[500px] overflow-hidden rounded-2xl
+                shadow-xl"
+            >
               <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105 grayscale"
+                className="absolute inset-0 bg-cover bg-center grayscale
+                  transition-transform duration-500 group-hover:scale-105"
                 style={{
                   backgroundImage: "url('/assets/constitucion.jpg')",
                 }}
               />
-              <div className="absolute inset-0 bg-sky-900/90 transition-opacity group-hover:bg-sky-900/80" />
-              <div className="relative flex h-full flex-col items-center justify-center p-8 text-center text-white">
-                <h3 className="font-serif text-3xl font-bold mb-4">
+              <div
+                className="absolute inset-0 bg-sky-900/90 transition-opacity
+                  group-hover:bg-sky-900/80"
+              />
+              <div
+                className="relative flex h-full flex-col items-center
+                  justify-center p-8 text-center text-white"
+              >
+                <h3 className="mb-4 font-serif text-3xl font-bold">
                   Constitución de empresas
                 </h3>
-                <p className="mb-8 text-lg text-sky-100 max-w-md min-h-[84px] flex items-center justify-center">
-                  Asesoramos y acompañamos a nuestros clientes durante el proceso
-                  de constitución legal de su empresa en Irlanda.
+                <p
+                  className="mb-8 flex min-h-[84px] max-w-md items-center
+                    justify-center text-lg text-sky-100"
+                >
+                  Asesoramos y acompañamos a nuestros clientes durante el
+                  proceso de constitución legal de su empresa en Irlanda.
                 </p>
                 <Link
                   to="/start-ups"
-                  className="inline-block bg-white text-sky-900 px-8 py-3 rounded font-bold hover:bg-sky-50 transition-colors"
+                  className="inline-block rounded bg-white px-8 py-3 font-bold
+                    text-sky-900 transition-colors hover:bg-sky-50"
                 >
                   Solicitar más información
                 </Link>
@@ -161,14 +206,17 @@ export default function Index() {
 
       {/* Testimonial */}
       <section
-        className="relative py-32 bg-cover bg-center bg-no-repeat "
+        className="relative bg-cover bg-center bg-no-repeat py-32"
         style={{
           backgroundImage: "url('/assets/testimonial.jpg')",
         }}
       >
         <div className="absolute inset-0 bg-sky-900/50" />
         <div className="relative container mx-auto px-4 text-center text-white">
-          <blockquote className="font-serif text-2xl md:text-4xl italic leading-relaxed max-w-4xl mx-auto">
+          <blockquote
+            className="mx-auto max-w-4xl font-serif text-2xl leading-relaxed
+              italic md:text-4xl"
+          >
             “Cuando todo está explicado en mi idioma, las decisiones son mucho
             más fáciles.”
           </blockquote>

@@ -167,7 +167,8 @@ export const meta: Route.MetaFunction = ({
     },
     {
       name: "keywords",
-      content: "Gestoría Irlanda, Asesoría Fiscal Irlanda, Contabilidad Irlanda, Spanish Accountants Ireland, Impuestos Irlanda, Autónomos Irlanda, Empresas Irlanda",
+      content:
+        "Gestoría Irlanda, Asesoría Fiscal Irlanda, Contabilidad Irlanda, Spanish Accountants Ireland, Impuestos Irlanda, Autónomos Irlanda, Empresas Irlanda",
     },
     // Only need these properties, since it automatically uses the og pproperties:
     // https://developer.x.com/en/docs/x-for-websites/cards/overview/markup

@@ -94,9 +94,12 @@ const PLANS = [
 
 export default function ServicioIntegral() {
   return (
-    <div className="bg-neutral-50 min-h-screen">
+    <div className="min-h-screen bg-neutral-50">
       <div className="bg-white px-4 py-16 text-center shadow-sm sm:px-6 lg:px-8">
-        <h1 className="font-serif text-4xl font-extrabold tracking-tight text-neutral-900 sm:text-5xl">
+        <h1
+          className="font-serif text-4xl font-extrabold tracking-tight
+            text-neutral-900 sm:text-5xl"
+        >
           Servicio de suscripción todo incluido
         </h1>
         <div className="mx-auto mt-4 max-w-4xl text-lg text-neutral-500">
@@ -105,12 +108,14 @@ export default function ServicioIntegral() {
             incluyen todos los servicios que requiere una actividad frente a
             registro y hacienda en circunstancias normales.
           </p>
-          <p className="text-sm italic text-neutral-400">
+          <p className="text-sm text-neutral-400 italic">
             Tasas oficiales por registro de documentos en CRO no incluidas.
             Empresas con ejercicios fiscales ya iniciales consultar precios.
-            
-          </p><p className="text-sm italic text-neutral-400">(Precios no incluyen IVA)
-        </p></div>
+          </p>
+          <p className="text-sm text-neutral-400 italic">
+            (Precios no incluyen IVA)
+          </p>
+        </div>
       </div>
 
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
@@ -118,7 +123,8 @@ export default function ServicioIntegral() {
           {PLANS.map((plan) => (
             <div
               key={plan.title}
-              className="flex flex-col rounded-xl border border-neutral-200 bg-white p-8 shadow-sm transition-shadow hover:shadow-md"
+              className="flex flex-col rounded-xl border border-neutral-200
+                bg-white p-8 shadow-sm transition-shadow hover:shadow-md"
             >
               <h2 className="mb-2 text-2xl font-bold text-sky-900">
                 {plan.title}
@@ -153,7 +159,10 @@ export default function ServicioIntegral() {
                   ))}
                 </ul>
               </div>
-              <div className="mt-auto border-t border-neutral-100 pt-6 flex items-center justify-between">
+              <div
+                className="mt-auto flex items-center justify-between border-t
+                  border-neutral-100 pt-6"
+              >
                 <p className="text-3xl font-bold text-blue-600">
                   {plan.price}{" "}
                   <span className="text-base font-normal text-neutral-500">
@@ -162,7 +171,11 @@ export default function ServicioIntegral() {
                 </p>
                 <Link
                   to="/contacto"
-                  className="rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                  className="rounded-md bg-blue-600 px-4 py-2 text-sm
+                    font-semibold text-white shadow-sm hover:bg-blue-500
+                    focus-visible:outline focus-visible:outline-2
+                    focus-visible:outline-offset-2
+                    focus-visible:outline-blue-600"
                 >
                   Contratar
                 </Link>

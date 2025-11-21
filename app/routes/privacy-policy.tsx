@@ -30,8 +30,8 @@ export const meta: MetaFunction = ({ matches }) => {
 export default function PrivacyPolicy() {
   return (
     <div className="container mx-auto px-4 py-16">
-      <div className="max-w-3xl mx-auto">
-        <h1 className="mb-8 text-4xl font-bold text-neutral-900 border-b pb-4">
+      <div className="mx-auto max-w-3xl">
+        <h1 className="mb-8 border-b pb-4 text-4xl font-bold text-neutral-900">
           Privacy Policy
         </h1>
 
@@ -53,7 +53,7 @@ export default function PrivacyPolicy() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-neutral-900 mb-2">
+            <h2 className="mb-2 text-xl font-semibold text-neutral-900">
               Data Collection
             </h2>
             <p>
@@ -65,7 +65,7 @@ export default function PrivacyPolicy() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-neutral-900 mb-2">
+            <h2 className="mb-2 text-xl font-semibold text-neutral-900">
               Purpose and Legal Basis
             </h2>
             <p>
@@ -79,7 +79,7 @@ export default function PrivacyPolicy() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-neutral-900 mb-2">
+            <h2 className="mb-2 text-xl font-semibold text-neutral-900">
               Your Rights
             </h2>
             <p>
@@ -107,7 +107,7 @@ export default function PrivacyPolicy() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-neutral-900 mb-2">
+            <h2 className="mb-2 text-xl font-semibold text-neutral-900">
               Security
             </h2>
             <p>
@@ -120,15 +120,15 @@ export default function PrivacyPolicy() {
           </section>
 
           <section>
-            <p className="italic text-sm">
+            <p className="text-sm italic">
               This policy may be updated to reflect regulatory or internal
               changes. The latest version will always be available on this
               website.
             </p>
           </section>
 
-          <div className="bg-neutral-50 border-l-4 border-neutral-500 p-4 my-6">
-            <p className="font-semibold text-neutral-900 mb-1">
+          <div className="my-6 border-l-4 border-neutral-500 bg-neutral-50 p-4">
+            <p className="mb-1 font-semibold text-neutral-900">
               Important Note
             </p>
             <p className="text-sm">
@@ -144,7 +144,7 @@ export default function PrivacyPolicy() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-neutral-200">
+        <div className="mt-12 border-t border-neutral-200 pt-8">
           <h2 className="mb-6 text-3xl font-bold text-neutral-900">
             Legal Notice and Terms of Use
           </h2>
@@ -155,7 +155,7 @@ export default function PrivacyPolicy() {
               4 (D04F1P2), Ireland. Access and use of this site imply acceptance
               of the following terms:
             </p>
-            <ul className="list-disc pl-5 space-y-2">
+            <ul className="list-disc space-y-2 pl-5">
               <li>
                 Content is provided for informational purposes only and does not
                 constitute legal or tax advice.
@@ -173,7 +173,7 @@ export default function PrivacyPolicy() {
                 contained on this website.
               </li>
             </ul>
-            <p className="text-sm text-neutral-600 mt-4">
+            <p className="mt-4 text-sm text-neutral-600">
               Irish Tax Agents Ltd does not act as a Trust or Company Service
               Provider (TCSP) and does not provide regulated services such as
               direct company formation, registered office services, or acting as

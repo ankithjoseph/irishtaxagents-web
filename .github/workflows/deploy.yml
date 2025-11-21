@@ -3,7 +3,7 @@ name: Deploy to Easypanel
 on:
   push:
     branches:
-      - main        # change if your default branch is different
+      - main # change if your default branch is different
 
 jobs:
   deploy:

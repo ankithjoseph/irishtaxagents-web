@@ -57,7 +57,8 @@ export default function Tarifas() {
       services: [
         {
           name: "Asesoría en Constitución de Sociedad Limitada (Limited Company)",
-          price: "399 €", link: "https://buy.stripe.com/9AQbLO9A504ebXa28d"
+          price: "399 €",
+          link: "https://buy.stripe.com/9AQbLO9A504ebXa28d",
         },
         {
           name: "Gestión contable, tributaria y registro para empresas Ltd",
@@ -79,7 +80,11 @@ export default function Tarifas() {
           name: "Gestión contable, tributaria y registro para autónomos",
           price: "desde 225 € mes",
         },
-        { name: "PPS", price: "150 €", link: "https://buy.stripe.com/cN25nqaE9aIS7GUbIM" },
+        {
+          name: "PPS",
+          price: "150 €",
+          link: "https://buy.stripe.com/cN25nqaE9aIS7GUbIM",
+        },
         {
           name: "Cobro de facturas en calidad de empleado",
           price: "250 € nómina",
@@ -132,7 +137,10 @@ export default function Tarifas() {
     <div className="bg-neutral-50">
       {/* Header Section */}
       <div className="bg-white px-4 py-16 text-center shadow-sm sm:px-6 lg:px-8">
-        <h1 className="font-serif text-4xl font-extrabold tracking-tight text-neutral-900 sm:text-5xl">
+        <h1
+          className="font-serif text-4xl font-extrabold tracking-tight
+            text-neutral-900 sm:text-5xl"
+        >
           Tarifas y Servicios
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-xl text-neutral-500">
@@ -148,9 +156,15 @@ export default function Tarifas() {
         <div className="grid gap-8 md:grid-cols-2">
           <Link
             to="/tarifas/umbrella-services"
-            className="group relative flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm transition-all hover:border-sky-300 hover:shadow-md"
+            className="group relative flex flex-col overflow-hidden rounded-2xl
+              border border-neutral-200 bg-white p-8 shadow-sm transition-all
+              hover:border-sky-300 hover:shadow-md"
           >
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-sky-100 text-sky-600 transition-colors group-hover:bg-sky-600 group-hover:text-white">
+            <div
+              className="mb-4 flex h-12 w-12 items-center justify-center
+                rounded-lg bg-sky-100 text-sky-600 transition-colors
+                group-hover:bg-sky-600 group-hover:text-white"
+            >
               <svg
                 version="1.1"
                 id="Layer_1"
@@ -163,16 +177,24 @@ export default function Tarifas() {
                 </g>
               </svg>
             </div>
-            <h3 className="mb-3 text-2xl font-bold text-neutral-900 group-hover:text-sky-700">
+            <h3
+              className="mb-3 text-2xl font-bold text-neutral-900
+                group-hover:text-sky-700"
+            >
               Umbrella Services
             </h3>
             <p className="mb-6 flex-1 text-neutral-600">
-              Ideal para profesionales que trabajan por proyectos. Olvídate de la
-              carga administrativa de ser autónomo o crear una empresa.
+              Ideal para profesionales que trabajan por proyectos. Olvídate de
+              la carga administrativa de ser autónomo o crear una empresa.
             </p>
-            <span className="inline-flex items-center font-medium text-sky-600 group-hover:text-sky-700">
+            <span
+              className="inline-flex items-center font-medium text-sky-600
+                group-hover:text-sky-700"
+            >
               Ver detalles{" "}
-              <span className="ml-2 transition-transform group-hover:translate-x-1">
+              <span
+                className="ml-2 transition-transform group-hover:translate-x-1"
+              >
                 &rarr;
               </span>
             </span>
@@ -180,9 +202,15 @@ export default function Tarifas() {
 
           <Link
             to="/tarifas/servicio-integral"
-            className="group relative flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm transition-all hover:border-sky-300 hover:shadow-md"
+            className="group relative flex flex-col overflow-hidden rounded-2xl
+              border border-neutral-200 bg-white p-8 shadow-sm transition-all
+              hover:border-sky-300 hover:shadow-md"
           >
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-sky-100 text-sky-600 transition-colors group-hover:bg-sky-600 group-hover:text-white">
+            <div
+              className="mb-4 flex h-12 w-12 items-center justify-center
+                rounded-lg bg-sky-100 text-sky-600 transition-colors
+                group-hover:bg-sky-600 group-hover:text-white"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -198,16 +226,24 @@ export default function Tarifas() {
                 />
               </svg>
             </div>
-            <h3 className="mb-3 text-2xl font-bold text-neutral-900 group-hover:text-sky-700">
+            <h3
+              className="mb-3 text-2xl font-bold text-neutral-900
+                group-hover:text-sky-700"
+            >
               Servicio Integral Empresas
             </h3>
             <p className="mb-6 flex-1 text-neutral-600">
               Para sociedades limitadas y empresas estables. Externaliza
               contabilidad, impuestos y gestión con CRO y Revenue.
             </p>
-            <span className="inline-flex items-center font-medium text-sky-600 group-hover:text-sky-700">
+            <span
+              className="inline-flex items-center font-medium text-sky-600
+                group-hover:text-sky-700"
+            >
               Ver detalles{" "}
-              <span className="ml-2 transition-transform group-hover:translate-x-1">
+              <span
+                className="ml-2 transition-transform group-hover:translate-x-1"
+              >
                 &rarr;
               </span>
             </span>
@@ -221,9 +257,10 @@ export default function Tarifas() {
           {categories.map((category, index) => (
             <div
               key={index}
-              className="flex flex-col overflow-hidden rounded-2xl bg-white shadow-lg transition-shadow hover:shadow-xl"
+              className="flex flex-col overflow-hidden rounded-2xl bg-white
+                shadow-lg transition-shadow hover:shadow-xl"
             >
-              <div className="bg-sky-50 px-6 py-4 border-b border-sky-100">
+              <div className="border-b border-sky-100 bg-sky-50 px-6 py-4">
                 <h3 className="text-xl font-bold text-sky-900">
                   {category.title}
                 </h3>
@@ -234,14 +271,16 @@ export default function Tarifas() {
                   {category.services.map((service, sIndex) => (
                     <li
                       key={sIndex}
-                      className="flex items-start justify-between border-b border-neutral-100 pb-2 last:border-0 last:pb-0"
+                      className="flex items-start justify-between border-b
+                        border-neutral-100 pb-2 last:border-0 last:pb-0"
                     >
                       {service.link ? (
                         <Link
                           to={service.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="mr-4 text-neutral-700 hover:text-sky-600 hover:underline"
+                          className="mr-4 text-neutral-700 hover:text-sky-600
+                            hover:underline"
                         >
                           {service.name}
                         </Link>
@@ -250,7 +289,10 @@ export default function Tarifas() {
                           {service.name}
                         </span>
                       )}
-                      <span className="whitespace-nowrap font-semibold text-neutral-900">
+                      <span
+                        className="font-semibold whitespace-nowrap
+                          text-neutral-900"
+                      >
                         {service.price}
                       </span>
                     </li>
@@ -264,8 +306,12 @@ export default function Tarifas() {
 
       {/* CTA Section */}
       <div className="bg-sky-900">
-        <div className="mx-auto max-w-2xl px-4 py-16 text-center sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        <div
+          className="mx-auto max-w-2xl px-4 py-16 text-center sm:px-6 lg:px-8"
+        >
+          <h2
+            className="text-3xl font-bold tracking-tight text-white sm:text-4xl"
+          >
             ¿Necesitas un presupuesto a medida?
           </h2>
           <p className="mt-4 text-lg text-sky-100">
@@ -275,7 +321,9 @@ export default function Tarifas() {
           <div className="mt-8">
             <Link
               to="/contacto"
-              className="inline-flex items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-sky-900 hover:bg-sky-50"
+              className="inline-flex items-center justify-center rounded-md
+                border border-transparent bg-white px-5 py-3 text-base
+                font-medium text-sky-900 hover:bg-sky-50"
             >
               Contactar ahora
             </Link>
