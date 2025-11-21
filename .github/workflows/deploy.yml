@@ -12,6 +12,6 @@ jobs:
     steps:
       - name: Trigger Easypanel deployment
         env:
-          DEPLOY_HOOK: ${{ secrets.EASYPANEL_DEPLOY_HOOK }}
+          DEPLOY_HOOK: ${{ secrets.DEPLOY_HOOK }}
         run: |
           curl "$DEPLOY_HOOK"
