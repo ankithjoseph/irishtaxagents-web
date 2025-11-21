@@ -108,8 +108,9 @@ export default function ServicioIntegral() {
           <p className="text-sm italic text-neutral-400">
             Tasas oficiales por registro de documentos en CRO no incluidas.
             Empresas con ejercicios fiscales ya iniciales consultar precios.
-          </p>
-        </div>
+            
+          </p><p className="text-sm italic text-neutral-400">(Precios no incluyen IVA)
+        </p></div>
       </div>
 
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
@@ -156,7 +157,7 @@ export default function ServicioIntegral() {
                 <p className="text-3xl font-bold text-blue-600">
                   {plan.price}{" "}
                   <span className="text-base font-normal text-neutral-500">
-                    / mensuales
+                    / mensuales + IVA
                   </span>
                 </p>
                 <Link
